@@ -5,7 +5,7 @@
 
     Lexers for APL.
 
-    :copyright: Copyright 2006-2017 by the Pygments team, see AUTHORS.
+    :copyright: Copyright 2006-2019 by the Pygments team, see AUTHORS.
     :license: BSD, see LICENSE for details.
 """
 
@@ -18,7 +18,7 @@ __all__ = ['APLLexer']
 
 class APLLexer(RegexLexer):
     """
-    A simple APL lexer.
+    A simple `APL <https://en.m.wikipedia.org/wiki/APL_(programming_language)>`_ lexer.
 
     .. versionadded:: 2.0
     """
@@ -71,14 +71,14 @@ class APLLexer(RegexLexer):
             #
             # Numbers
             # =======
-            (u'¯?(0[Xx][0-9A-Fa-f]+|[0-9]*\.?[0-9]+([Ee][+¯]?[0-9]+)?|¯|∞)'
-             u'([Jj]¯?(0[Xx][0-9A-Fa-f]+|[0-9]*\.?[0-9]+([Ee][+¯]?[0-9]+)?|¯|∞))?',
+            (u'¯?(0[Xx][0-9A-Fa-f]+|[0-9]*\\.?[0-9]+([Ee][+¯]?[0-9]+)?|¯|∞)'
+             u'([Jj]¯?(0[Xx][0-9A-Fa-f]+|[0-9]*\\.?[0-9]+([Ee][+¯]?[0-9]+)?|¯|∞))?',
              Number),
             #
             # Operators
             # ==========
-            (u'[\.\\\/⌿⍀¨⍣⍨⍠⍤∘]', Name.Attribute),  # closest token type
-            (u'[+\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⌸⍯↗]',
+            (u'[\\.\\\\\\/⌿⍀¨⍣⍨⍠⍤∘]', Name.Attribute),  # closest token type
+            (u'[+\\-×÷⌈⌊∣|⍳?*⍟○!⌹<≤=>≥≠≡≢∊⍷∪∩~∨∧⍱⍲⍴,⍪⌽⊖⍉↑↓⊂⊃⌷⍋⍒⊤⊥⍕⍎⊣⊢⍁⍂≈⌸⍯↗]',
              Operator),
             #
             # Constant

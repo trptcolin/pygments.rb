@@ -46,9 +46,8 @@ task(:build).enhance([:lexers])
 
 namespace :vendor do
   file 'vendor/pygments-main' do |f|
-    sh "hg clone https://bitbucket.org/birkenfeld/pygments-main #{f.name}"
-    sh "hg --repository #{f.name} identify --id > #{f.name}/REVISION"
-    rm_rf Dir["#{f.name}/.hg*"]
+    sh "git clone https://github.com/pygments/pygments #{f.name}"
+    rm_rf Dir["#{f.name}/.git*"]
     rm_rf Dir["#{f.name}/tests"]
   end
 
